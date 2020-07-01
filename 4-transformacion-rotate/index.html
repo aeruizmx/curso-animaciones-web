@@ -6,43 +6,106 @@
   <title>Transformacion - Rotacion CSS</title>
   <style>
     body{
-      display: flex;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
       color: white;
       font-family: Arial;
     }
+    .grid-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
     .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: 1px solid red;
     }
-    .container:hover .cuadrado{
-    /* .cuadrado:hover{  - Aqui la transicion es rara*/
-    /*  transform: rotate(45deg);*/
-    /*  transform: rotate(-45deg); */
-    /*  transform: rotateX(45deg);*/
-    /* transform: rotateY(45deg) */
-    /* transform: rotateZ(45deg); */
-    /* transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg); */
-    /* transform: rotate3d(x,y,x, rotate); */
-    transform: rotate3d(1,0,0, 45deg);
-    transform: rotate3d(0,1,0, 45deg);
-    transform: rotate3d(0,0,1, 45deg);
-    }
-    .cuadrado{
+    div[class^='cuadrado']{
       width: 200px;
       height: 200px;
       background: #7dc900;
       margin: 20px;
       transition: .3s;
     }
+    .cuadrado1:hover{
+      transform: rotate(45deg);
+    }
+    .cuadrado2:hover{
+      transform: rotate(-45deg);
+    }
+    .cuadrado3:hover{
+      transform: rotateX(45deg);
+    }
+    .cuadrado4:hover{
+      transform: rotateY(45deg);
+    }
+    .cuadrado5:hover{
+      transform: rotateZ(45deg);
+    }
+    .cuadrado6:hover{
+      transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+    }
+    .cuadrado7:hover{
+      transform: rotate3d(x,y,x, rotate);
+      transform: rotate3d(1,0,0, 45deg);
+    }
+    .cuadrado8:hover{
+      transform: rotate3d(0,1,0, 45deg);
+    }
+    .cuadrado9:hover{
+      transform: rotate3d(0,0,1, 45deg);
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="cuadrado">
-      Hey!
+  <h1>Tranformacion - Rotate</h1>
+  <div class="grid-container">
+    <div class="container">
+      <div class="cuadrado1">
+        transform: rotate(45deg);
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado2">
+        transform: rotate(-45deg);
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado3">
+        transform: rotateX(45deg);
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado4">
+        transform: rotateY(45deg)
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado5">
+        transform: rotateZ(45deg);
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado6">
+        transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado7">
+        transform: rotate3d(1,0,0, 45deg);
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado8">
+        transform: rotate3d(0,1,0, 45deg);
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado9">
+        transform: rotate3d(0,0,1, 45deg);
+      </div>
     </div>
   </div>
+  
 </body>
 </html>
