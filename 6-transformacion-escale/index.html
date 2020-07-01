@@ -3,40 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transformacion - Traslacion CSS</title>
+  <title>Transformacion - Escalar CSS</title>
   <style>
-    body{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+     body{
       height: 100vh;
       color: white;
       font-family: Arial;
-      perspective: 200px;
     }
-    .container{
+    .grid-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    div[class^='container']{
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: 1px solid red;
     }
-    .container:hover .cuadrado{
-      /* transform: scale(x,y); */
-      /* transform: scale(0 = 0% del tamaño - 1 = 100% del tamaño); */
-      /* transform: scale(2); */
-      /* transform: scale(.5); */
-      transform: scale(2, .5);
-    }
-    .cuadrado{
+    div[class^='cuadrado']{
       width: 200px;
       height: 200px;
       background: #7dc900;
+      border: 1px solid black;
       margin: 20px;
       transition: .3s;
+    }
+    .container:hover .cuadrado1{
+      /* transform: scale(x); - 0 a 1 - 0 = 0% y 1 = 100% del tamaño
+      transform: scale(x,y); */
+      transform: scale(2);
+    }
+    .container:hover .cuadrado2{
+      transform: scale(.5);
+    }
+    .container:hover .cuadrado3{
+      transform: scale(2,.5);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="cuadrado">
-      Hey!
+  <h1>Tranformacion - Escale</h1>
+  <div class="grid-container">
+    <div class="container">
+      <div class="cuadrado1">
+        <p>transform: scale(2);</p>
+        200%
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado2">
+        <p>transform: scale(.5);</p>
+        50%
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado3">
+        <p>transform: scale(2,.5);</p>
+      </div>
     </div>
   </div>
 </body>
