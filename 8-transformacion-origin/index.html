@@ -5,51 +5,229 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Transformacion - Punto de origen CSS</title>
   <style>
-    body{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+     body{
       height: 100vh;
       color: white;
       font-family: Arial;
     }
-    .container{
+    .grid-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    div[class^='container']{
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: 1px solid red;
     }
-    .container:hover .cuadrado{
-     
-    /* .cuadrado:hover{  - Aqui la transicion es rara*/
-    /*  transform: rotate(45deg);*/
-    /*  transform: rotate(-45deg); */
-    /* transform: rotateX(45deg); */
-    transform: rotateY(45deg)
-    /* transform: rotateZ(45deg); */
-    /* transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg); */
-    /* transform: rotate3d(x,y,x, rotate);*/ 
-    /* transform: rotate3d(1,0,0, 45deg);*/ 
-    /* transform: rotate3d(0,1,0, 45deg);*/ 
-    /* transform: rotate3d(0,0,1, 45deg);*/ 
-    }
-    .cuadrado{
+    div[class^='cuadrado']{
       width: 200px;
       height: 200px;
       background: #7dc900;
+      border: 1px solid black;
       margin: 20px;
       transition: .3s;
-       /* transform-origin: x y; */
-      /* transform-origin: 50% 50%; */
+    }
+    .cuadrado1{
+      /* transform-origin: X Y; */
+      transform-origin: 50% 50%;
+    }
+    .cuadrado2{
       transform-origin: top;
+    }
+    .cuadrado3{
       transform-origin: bottom;
-      transform-origin: left;
-      transform-origin: right;
+    }
+    .cuadrado4{
+      transform-origin: bottom;
+    }
+    .cuadrado5{
+      transform-origin: bottom;
+    }
+    .cuadrado6{
+      /* transform-origin: X Y; */
+      transform-origin: left top;
+    }
+    .cuadrado7{
+      transform-origin: right top;
+    }
+    .cuadrado8{
+      transform-origin: right top;
+    }
+    .cuadrado9{
+      transform-origin: right bottom;
+    }
+    .cuadrado10{
+      transform-origin: left bottom;
+    }
+    .cuadrado11{
+      transform-origin: 0% 50%;
+    }
+    .cuadrado12{
+      transform-origin: 100% 50%;
+    }
+    .container:hover .cuadrado1{
+      transform: rotateX(45deg);
+    }
+    .container:hover .cuadrado2{
+      transform: rotateX(45deg);
+    }
+    .container:hover .cuadrado3{
+      transform: rotateX(45deg);
+    }
+    .container:hover .cuadrado4{
+      transform: rotateY(45deg);
+    }
+    .container:hover .cuadrado5{
+      transform: rotateY(45deg);
+    }
+    .container:hover .cuadrado6{
+      transform: rotateZ(45deg);
+    }
+    .container:hover .cuadrado7{
+      transform: rotateZ(45deg);
+    }
+    .container:hover .cuadrado8{
+      transform: rotateZ(-45deg);
+    }
+    .container:hover .cuadrado9{
+      transform: rotateZ(-45deg);
+    }
+    .container:hover .cuadrado10{
+      transform: rotateZ(45deg);
+    }
+    .container:hover .cuadrado11{
+      transform: rotateZ(45deg);
+    }
+    .container:hover .cuadrado12{
+      transform: rotateY(45deg);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="cuadrado">
-      Hey!
+  <h1 style="color: black; text-align: center;">Tranformacion - Punto de origen</h1>
+  <div class="grid-container">
+    <div class="container">
+      <div class="cuadrado1">
+        <p>padre:
+          transform-origin: 50% 50%;
+        </p>
+          <p>hijo:
+            transform: rotateX(45deg);
+        </p>
+      </div>
     </div>
+    <div class="container">
+      <div class="cuadrado2">
+        <p>padre:
+          transform-origin: top;
+        </p>
+          <p>hijo:
+            transform: rotateX(45deg);
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado3">
+        <p>padre:
+          transform-origin: bottom;
+        </p>
+          <p>hijo:
+            transform: rotateX(45deg);
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado4">
+        <p>padre:
+          transform-origin: left;
+        </p>
+          <p>hijo:
+            transform: rotateY(45deg);
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado5">
+        <p>padre:
+          transform-origin: right;
+        </p>
+          <p>hijo:
+            transform: rotateY(45deg);
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado6">
+        <p>padre:
+          transform-origin: left top;
+        </p>
+          <p>hijo:
+            transform: rotateZ(45deg);
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado7">
+        <p>padre:
+          transform-origin: right top;
+        </p>
+          <p>hijo:
+            transform: rotateZ(45deg);
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado8">
+        <p>padre:
+          transform-origin: right top;
+        </p>
+          <p>hijo:
+            transform: rotateZ(-45deg);
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado9">
+        <p>padre:
+          transform-origin: right bottom;
+        </p>
+          <p>hijo:
+            transform: rotateZ(45deg);
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado10">
+        <p>padre:
+          transform-origin: left bottom;
+        </p>
+          <p>hijo:
+            transform: rotateZ(45deg);
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado11">
+        <p>padre:
+          transform-origin: 0% 50%;
+        </p>
+          <p>hijo:
+            transform: rotateZ(45deg);
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado12">
+        <p>padre:
+          transform-origin: 100% 50%;
+        </p>
+          <p>hijo:
+            transform: rotateY(45deg);
+        </p>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
