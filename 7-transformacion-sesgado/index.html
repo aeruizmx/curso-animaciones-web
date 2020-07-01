@@ -6,37 +6,59 @@
   <title>Transformacion - Sesgado CSS</title>
   <style>
     body{
-      display: flex;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
       color: white;
       font-family: Arial;
-      perspective: 200px;
     }
-    .container{
+    .grid-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    div[class^='container']{
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: 1px solid red;
     }
-    .container:hover .cuadrado{
-      /* transform: skew(x,y); */
-      transform: skew(45deg);
-      transform: skew(45deg ,45deg);
-      transform: skew(10deg ,5deg);
-    }
-    .cuadrado{
+    div[class^='cuadrado']{
       width: 200px;
       height: 200px;
       background: #7dc900;
+      border: 1px solid black;
       margin: 20px;
       transition: .3s;
+    }
+    .container:hover .cuadrado1{
+      /* transform: skew(x,y); */
+      transform: skew(45deg);
+    }
+    .container:hover .cuadrado2{
+      transform: skew(45deg, 45deg);
+    }
+    .container:hover .cuadrado3{
+      transform: skew(20deg, 20deg);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="cuadrado">
-      Hey!
+  <h1 style="color: black; text-align: center;">Tranformacion - Sesgado</h1>
+  <div class="grid-container">
+    <div class="container">
+      <div class="cuadrado1">
+        transform: skew(45deg);
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado2">
+        transform: skew(45deg, 45deg);
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado3">
+        transform: skew(20deg, 20deg);
+      </div>
     </div>
   </div>
+  
 </body>
 </html>
