@@ -6,52 +6,255 @@
   <title>Transformacion - Traslacion CSS</title>
   <style>
     body{
-      display: flex;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
       color: white;
       font-family: Arial;
-      perspective: 200px;
-      perspective-origin: center;
-      /* perspective-origin: x,y; */
-      /* perspective-origin: top; */
-      /* perspective-origin: bottom; */
-      /* perspective-origin: left; */
-      /* perspective-origin: right; */
-      /* perspective-origin: top right; */
-      /* perspective-origin: top left; */
-      /* perspective-origin: bottom right; */
-      /* perspective-origin: bottom left; */
     }
-    .container{
+    .grid-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    div[class^='container']{
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: 1px solid red;
     }
-    .container:hover .cuadrado{
-      /* transform: translate(x); */
-      /* transform: translate(-100px); */
-      /* transform: translate(x,y); */
-      /* transform: translate(-100px, -100px); */
-      /* transform: translateX(100px); */
-      /* transform: translateY(100px); */
-      /* transform: translateZ(100px); */
-      /* transform: translate3d(x,y,z); */
-      transform: translate3d(-100px,-100px,-100px);
-    }
-    .cuadrado{
+    div[class^='cuadrado']{
       width: 200px;
       height: 200px;
       background: #7dc900;
+      border: 1px solid black;
       margin: 20px;
       transition: .3s;
+    }
+    .container2{
+      perspective: 200px;
+      perspective-origin: center;
+    }
+    .container3{
+      perspective: 200px;
+      perspective-origin: top;
+    }
+    .container4{
+      perspective: 200px;
+      perspective-origin: bottom;
+    }
+    .container5{
+      perspective: 200px;
+      perspective-origin: left;
+    }
+    .container6{
+      perspective: 200px;
+      perspective-origin: right;
+    }
+    .container7{
+      perspective: 200px;
+      perspective-origin: top right;
+    }
+    .container8{
+      perspective: 200px;
+      perspective-origin: top left;
+    }
+    .container9{
+      perspective: 200px;
+      perspective-origin: bottom left;
+    }
+    .container10{
+      perspective: 200px;
+      perspective-origin: bottom right;
+    }
+    .container:hover .cuadrado1{
+      /* transform: translate(x); */
+      transform: translate(100px);
+    }
+    .container:hover .cuadrado2{
+      transform: translate(-100px);
+    }
+    .container:hover .cuadrado3{
+      /* transform: translate(x,y); */
+      transform: translate(100px,100px);
+    }
+    .container:hover .cuadrado4{
+      transform: translate(-100px,-100px);
+    }
+    .container:hover .cuadrado5{
+      /* transform: translateX(x); */
+      transform: translateX(100px);
+    }
+    .container:hover .cuadrado6{
+      transform: translateY(100px);
+    }
+    .container2:hover .cuadrado7{
+      transform: translateZ(100px);
+    }
+    .container3:hover .cuadrado8{
+      transform: translateZ(100px);
+    }
+    .container4:hover .cuadrado9{
+      transform: translateZ(100px);
+    }
+    .container5:hover .cuadrado10{
+      transform: translateZ(100px);
+    }
+    .container6:hover .cuadrado11{
+      transform: translateZ(100px);
+    }
+    .container7:hover .cuadrado12{
+      transform: translateZ(100px);
+    }
+    .container8:hover .cuadrado13{
+      transform: translateZ(100px);
+    }
+    .container9:hover .cuadrado14{
+      transform: translateZ(100px);
+    }
+    .container10:hover .cuadrado15{
+      transform: translateZ(100px);
+    }
+    .container2:hover .cuadrado16{
+      /* transform: translate3d(x,y,z); */
+      transform: translate3d(100px,100px,100px);
+    }
+    .container2:hover .cuadrado17{
+      transform: translate3d(-100px,-100px,-100px);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="cuadrado">
-      Hey!
+  <body>
+    <h1>Tranformacion - Translate</h1>
+    <div class="grid-container">
+      <div class="container">
+        <div class="cuadrado1">
+          transform: translate(100px);
+        </div>
+      </div>
+      <div class="container">
+        <div class="cuadrado2">
+          transform: translate(-100px);
+        </div>
+      </div>
+      <div class="container">
+        <div class="cuadrado3">
+          transform: translate(100px,100px);
+        </div>
+      </div>
+      <div class="container">
+        <div class="cuadrado4">
+          transform: translate(-100px,-100px);
+        </div>
+      </div>
+      <div class="container">
+        <div class="cuadrado5">
+          transform: translateX(100px);
+        </div>
+      </div>
+      <div class="container">
+        <div class="cuadrado6">
+          transform: translateY(100px);
+        </div>
+      </div>
+      <div class="container2">
+        <div class="cuadrado7">
+          <p>padre:
+          perspective: 200px;</p>
+          <p>hijo:
+          transform: translateZ(100px);</p>
+        </div>
+      </div>
+      <div class="container3">
+        <div class="cuadrado8">
+          <p>padre:
+          perspective: 200px;
+          perspective-origin: top;</p>
+          <p>hijo:
+          transform: translateZ(100px);</p>
+        </div>
+      </div>
+      <div class="container4">
+        <div class="cuadrado9">
+          <p>padre:
+          perspective: 200px;
+          perspective-origin: bottom;</p>
+          <p>hijo:
+          transform: translateZ(100px);</p>
+        </div>
+      </div>
+      <div class="container5">
+        <div class="cuadrado10">
+          <p>padre:
+          perspective: 200px;
+          perspective-origin: left;</p>
+          <p>hijo:
+          transform: translateZ(100px);</p>
+        </div>
+      </div>
+      <div class="container6">
+        <div class="cuadrado11">
+          <p>padre:
+          perspective: 200px;
+          perspective-origin: right;</p>
+          <p>hijo:
+          transform: translateZ(100px);</p>
+        </div>
+      </div>
+      <div class="container7">
+        <div class="cuadrado12">
+          <p>padre:
+          perspective: 200px;
+          perspective-origin: top right;</p>
+          <p>hijo:
+          transform: translateZ(100px);</p>
+        </div>
+      </div>
+      <div class="container8">
+        <div class="cuadrado13">
+          <p>padre:
+          perspective: 200px;
+          perspective-origin: top left;</p>
+          <p>hijo:
+          transform: translateZ(100px);</p>
+        </div>
+      </div>
+      <div class="container9">
+        <div class="cuadrado14">
+          <p>padre:
+          perspective: 200px;
+          perspective-origin: bottom left;</p>
+          <p>hijo:
+          transform: translateZ(100px);</p>
+        </div>
+      </div>
+      <div class="container10">
+        <div class="cuadrado15">
+          <p>padre:
+          perspective: 200px;
+          perspective-origin: bottom right;</p>
+          <p>hijo:
+          transform: translateZ(100px);</p>
+        </div>
+      </div>
+      <div class="container2">
+        <div class="cuadrado16">
+          <p>padre:
+            perspective: 200px;
+            perspective-origin: center;</p>
+            <p>hijo:
+              transform: translate3d(100px,100px,100px);</p>
+        </div>
+      </div>
+      <div class="container2">
+        <div class="cuadrado17">
+          <p>padre:
+            perspective: 200px;
+            perspective-origin: center;</p>
+            <p>hijo:
+              transform: translate3d(-100px,-100px,-100px);</p>
+        </div>
+      </div>
     </div>
-  </div>
+    
+  </body>
 </body>
 </html>
