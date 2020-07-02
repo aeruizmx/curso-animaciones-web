@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformacion - Aceleracion CSS</title>
+  <style>
+    body {
+      height: 100vh;
+      color: black;
+      font-family: Arial;
+    }
+
+    div[class^='container'] {
+      width: 100%;
+      border: 1px solid red;
+      color: black;
+
+    }
+
+    div[class^='circulo'] {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: blue;
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      position: relative;
+    }
+
+    p {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .circulo1 {
+      animation: circulo;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease;
+    }
+
+    .circulo2 {
+      animation: circulo;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in;
+    }
+
+    .circulo3 {
+      animation: circulo;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-out;
+    }
+
+    .circulo4 {
+      animation: circulo;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+    }
+    .circulo5 {
+      animation: circulo;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    }
+
+    .circulo6 {
+      animation: circulo;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: steps(60);
+    }
+
+    .circulo7 {
+      animation: circulo;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: steps(30);
+    }
+
+    .circulo8 {
+      animation: circulo;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: steps(10);
+    }
+
+    .circulo9 {
+      animation: circulo;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: steps(5);
+    }
+
+    .circulo10 {
+      animation: circulo;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: cubic-bezier(1,1,1,1);
+    }
+
+    .circulo11 {
+      animation: circulo;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: cubic-bezier(1,-1,1,-1);
+    }
+
+    .circulo12 {
+      animation: circulo;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: cubic-bezier(.75, -0.31, .33, 1.4);
+    }
+
+    @keyframes circulo {
+      0% {
+        left: 0;
+      }
+
+      100% {
+        left: calc(100% - 200px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="color: black; text-align: center;">Aceleracion</h1>
+
+  <div class="container">
+    <p>
+      animation-timing-function: ease;
+    </p>
+    <div class="circulo1"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: ease-in;
+    </p>
+    <div class="circulo2"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: ease-out;
+    </p>
+    <div class="circulo3"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: ease-in-out;
+    </p>
+    <div class="circulo4"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: linear;
+    </p>
+    <div class="circulo5"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: steps(60);
+    </p>
+    <div class="circulo6"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: steps(30);
+    </p>
+    <div class="circulo7"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: steps(10);
+    </p>
+    <div class="circulo8"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: steps(5);
+    </p>
+    <div class="circulo9"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: cubic-bezier(1,1,1,1);
+    </p>
+    <div class="circulo10"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: cubic-bezier(1,-1,1,-1);
+    </p>
+    <div class="circulo11"></div>
+  </div>
+  <div class="container">
+    <p>
+      animation-timing-function: cubic-bezier(.75, -0.31, .33, 1.4);
+    </p>
+    <div class="circulo12"></div>
+  </div>
+</body>
+
+</html>

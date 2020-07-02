@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transformacion - Punto de origen CSS</title>
+  <title> Animaciones CSS</title>
   <style>
     body {
       height: 100vh;
@@ -113,6 +113,7 @@
       /* animation-timing-function: cubic-bezier(1,1,1,1); */
       animation-direction: reverse;
     }
+
     .cuadrado11 {
       animation: cuadrado2;
       animation-duration: 2s;
@@ -134,26 +135,27 @@
       animation-duration: 2s;
       animation-timing-function: ease;
       animation-iteration-count: infinite;
-      
+
     }
-    .container:hover .cuadrado13{
+
+    .container:hover .cuadrado13 {
       animation-play-state: paused;
     }
 
-    .other-container{
+    .other-container {
       width: 100%;
       border: 1px solid red;
       color: black;
     }
 
-    .circulo{
+    .circulo {
       animation: circulo;
       animation-duration: 2s;
       animation-timing-function: ease;
       animation-iteration-count: infinite;
     }
 
-    .circulo2{
+    .circulo2 {
       animation: circulo;
       animation-duration: 2s;
       animation-timing-function: ease;
@@ -175,16 +177,18 @@
       0% {
         opacity: 1;
       }
+
       100% {
         opacity: 0;
       }
     }
 
     @keyframes circulo {
-      0%{
+      0% {
         left: 0;
       }
-      100%{
+
+      100% {
         left: calc(100% - 200px);
       }
     }
@@ -192,7 +196,7 @@
 </head>
 
 <body>
-  <h1 style="color: black; text-align: center;">Tranformacion - Punto de origen</h1>
+  <h1 style="color: black; text-align: center;">Animaciones</h1>
   <div class="grid-container">
     <div class="container">
       <div class="cuadrado1">
@@ -430,15 +434,15 @@
       <div class="cuadrado13">
         <p>
           .cuadrado13 {
-            animation: cuadrado2;
-            animation-duration: 2s;
-            animation-timing-function: ease;
-            
+          animation: cuadrado2;
+          animation-duration: 2s;
+          animation-timing-function: ease;
+
           }
         </p>
         <p>
           .container:hover .cuadrado13{
-            animation-play-state: paused;
+          animation-play-state: paused;
           }
         </p>
         <p>
@@ -450,10 +454,10 @@
   <div class="other-container">
     <p>
       .circulo{
-        animation: circulo;
-        animation-duration: 2s;
-        animation-timing-function: ease;
-        animation-iteration-count: infinite;
+      animation: circulo;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
       }
     </p>
     <p>
@@ -464,11 +468,11 @@
   <div class="other-container">
     <p>
       .circulo{
-        animation: circulo;
-        animation-duration: 2s;
-        animation-timing-function: ease;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
+      animation: circulo;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
       }
     </p>
     <p>
