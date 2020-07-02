@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformacion - Punto de origen CSS</title>
+  <style>
+    body {
+      height: 100vh;
+      color: white;
+      font-family: Arial;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    div[class^='container'] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid red;
+
+    }
+
+    div[class^='cuadrado'] {
+      width: 200px;
+      height: 200px;
+      background: #7dc900;
+      border: 1px solid black;
+      margin: 20px;
+    }
+
+    div[class^='circulo'] {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: blue;
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      position: relative;
+    }
+
+    .cuadrado1 {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: cuadrado;
+      animation-duration: 1s;
+    }
+
+    .cuadrado2 {
+      animation: cuadrado;
+      animation-duration: 1s;
+      animation-delay: 1s;
+    }
+
+    .cuadrado3 {
+      animation: cuadrado;
+      animation-duration: 1s;
+      animation-iteration-count: 10;
+    }
+
+    .cuadrado4 {
+      animation: cuadrado;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    .cuadrado5 {
+      animation: cuadrado;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+    }
+
+    .cuadrado6 {
+      animation: cuadrado;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in;
+    }
+
+    .cuadrado7 {
+      animation: cuadrado;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+    }
+
+    .cuadrado8 {
+      animation: cuadrado;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+
+    .cuadrado9 {
+      animation: cuadrado;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .cuadrado10 {
+      animation: cuadrado;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+      /* animation-timing-function: cubic-bezier(1,1,1,1); */
+      animation-direction: reverse;
+    }
+    .cuadrado11 {
+      animation: cuadrado2;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+      /* animation-timing-function: cubic-bezier(1,1,1,1); */
+      animation-direction: alternate;
+    }
+
+    .cuadrado12 {
+      animation: cuadrado2;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+
+    .cuadrado13 {
+      animation: cuadrado2;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+      
+    }
+    .container:hover .cuadrado13{
+      animation-play-state: paused;
+    }
+
+    .other-container{
+      width: 100%;
+      border: 1px solid red;
+      color: black;
+    }
+
+    .circulo{
+      animation: circulo;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+    }
+
+    .circulo2{
+      animation: circulo;
+      animation-duration: 2s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes cuadrado {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes cuadrado2 {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes circulo {
+      0%{
+        left: 0;
+      }
+      100%{
+        left: calc(100% - 200px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="color: black; text-align: center;">Tranformacion - Punto de origen</h1>
+  <div class="grid-container">
+    <div class="container">
+      <div class="cuadrado1">
+        <p>animation: cuadrado;
+          animation-duration: 1s;</p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado2">
+        <p>animation: cuadrado;
+          animation-duration: 1s;
+          animation-delay: 1s;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado3">
+        <p>animation: cuadrado;
+          animation-duration: 1s;
+          animation-iteration-count: 10;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado4">
+        <p>animation: cuadrado;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado5">
+        <p>
+          animation: cuadrado;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado6">
+        <p>
+          animation: cuadrado;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado7">
+        <p>
+          animation: cuadrado;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-out;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado8">
+        <p>
+          animation: cuadrado;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in-out;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado9">
+        <p>
+          animation: cuadrado;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado10">
+        <p>
+          animation: cuadrado;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease;
+          animation-direction: reverse;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado11">
+        <p>
+          animation: cuadrado;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease;
+          animation-direction: alternate;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado12">
+        <p>
+          animation: cuadrado2;
+          animation-duration: 2s;
+          animation-timing-function: ease;
+          animation-fill-mode: forwards;
+        </p>
+        <p>
+          @keyframes cuadrado {
+          0%{
+          opacity: 1;
+          }
+          100%{
+          opacity: 0;
+          }
+          }
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="cuadrado13">
+        <p>
+          .cuadrado13 {
+            animation: cuadrado2;
+            animation-duration: 2s;
+            animation-timing-function: ease;
+            
+          }
+        </p>
+        <p>
+          .container:hover .cuadrado13{
+            animation-play-state: paused;
+          }
+        </p>
+        <p>
+          @keyframes cuadrado2
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="other-container">
+    <p>
+      .circulo{
+        animation: circulo;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+      }
+    </p>
+    <p>
+      @keyframes circulo
+    </p>
+    <div class="circulo"></div>
+  </div>
+  <div class="other-container">
+    <p>
+      .circulo{
+        animation: circulo;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+    </p>
+    <p>
+      @keyframes circulo
+    </p>
+    <div class="circulo2"></div>
+  </div>
+</body>
+
+</html>
