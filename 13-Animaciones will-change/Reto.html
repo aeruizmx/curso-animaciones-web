@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reto eventos y animaciones</title>
+  <style>
+    body {
+      height: 100vh;
+      color: black;
+      font-family: Arial;
+    }
+
+    p {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    div[class^='container'] {
+      width: 100%;
+      height: 500px;
+      border: 1px solid red;
+      color: black;
+
+    }
+
+    div[class^='rueda'] {
+      width: 200px;
+      height: 200px;
+      background-image: url('rueda.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      position: relative;
+    }
+
+    .p1 {
+      animation: mostrar;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+    }
+
+    .p2 {
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+    }
+
+    .p3 {
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+    }
+
+    .rueda {
+      animation-duration: .5s, 10s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite, 1;
+    }
+
+    @keyframes mover-derecha {
+      0% {
+        top: 0;
+        left: 0;
+      }
+
+      100% {
+        top: 0;
+        left: calc(100% - 200px);
+      }
+    }
+
+    @keyframes mover-abajo {
+      0% {
+        top: 0;
+        left: calc(100% - 200px);
+      }
+
+      50% {}
+
+      100% {
+        top: calc(100% - 200px);
+        left: calc(100% - 200px);
+      }
+    }
+
+    @keyframes mover-izquierda {
+      0% {
+        top: calc(100% - 200px);
+        left: calc(100% - 200px);
+      }
+
+      50% {}
+
+      100% {
+        top: calc(100% - 200px);
+        left: 0;
+      }
+    }
+
+    @keyframes mover-arriba {
+      0% {
+        top: calc(100% - 200px);
+        left: 0;
+      }
+
+      50% {}
+
+      100% {
+        top: 0;
+        left: 0;
+      }
+    }
+
+    @keyframes girar {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      15% {
+        transform: rotate(45deg);
+      }
+
+      30% {
+        transform: rotate(90deg);
+      }
+
+      45% {
+        transform: rotate(135deg);
+      }
+
+      60% {
+        transform: rotate(180deg);
+      }
+
+      75% {
+        transform: rotate(225deg);
+      }
+
+      90% {
+        transform: rotate(270deg);
+      }
+
+      100% {
+        transform: rotate(315deg);
+      }
+    }
+
+    @keyframes mostrar {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(3);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="color: black; text-align: center;">Reto 2</h1>
+  <p id="p1" class="p1">En sus marcas!</p>
+  <p id="p2" class="p2">¿Listos?!</p>
+  <p id="p3" class="p3">FUERA!!!</p>
+  <p id="p4">FIN DE LA CARRERA!!!</p>
+  <div class="container">
+    <div id="rueda" class="rueda"></div>
+  </div>
+
+  <script>
+    const $p1 = document.getElementById('p1');
+    const $p4 = document.getElementById('p4');
+    $p4.style.display = 'none';
+    $p1.addEventListener('animationstart', (event) => {
+      if (event.animationName === 'mostrar') {
+        $p1.style.color = 'red';
+      }
+    });
+
+    $p1.addEventListener('animationend', (event) => {
+      if (event.animationName === 'mostrar') {
+        $p1.style.color = 'black';
+        const $p2 = document.getElementById('p2');
+        $p2.style.animationName = 'mostrar';
+        $p2.style.color = 'orange';
+      }
+    })
+    const $p2 = document.getElementById('p2');
+    $p2.addEventListener('animationend', (event) => {
+      if (event.animationName === 'mostrar') {
+        $p2.style.color = 'black';
+        const $p3 = document.getElementById('p3');
+        $p3.style.animationName = 'mostrar';
+        $p3.style.color = 'green';
+      }
+    })
+    const $p3 = document.getElementById('p3');
+    $p3.addEventListener('animationend', (event) => {
+      if (event.animationName === 'mostrar') {
+        $p3.style.color = 'black';
+        const $rueda = document.getElementById('rueda');
+        $rueda.style.animationName = 'girar, mover-derecha ';
+      }
+    })
+    const $rueda = document.getElementById('rueda');
+    $rueda.addEventListener('animationend', (event) => {
+      if (event.animationName === 'mover-derecha') {
+        $rueda.style.animationName = 'girar, mover-abajo ';
+      }
+      if (event.animationName === 'mover-abajo') {
+        $rueda.style.animationName = 'girar, mover-izquierda ';
+      }
+      if (event.animationName === 'mover-izquierda') {
+        $rueda.style.animationName = 'girar, mover-arriba';
+      }
+      if (event.animationName === 'mover-arriba') {
+        $p4.style.display = 'block';
+        $p4.style.color = 'blue';
+        $p4.style.animationName = 'mostrar';
+        $p4.style.animationDuration = '1s';
+        $p4.style.animationTimingFunction = 'ease-in-out';
+        $p4.style.animationIterationCount = '1';
+      }
+
+    })
+  </script>
+</body>
+
+</html>

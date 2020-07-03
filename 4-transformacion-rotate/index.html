@@ -1,62 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Transformacion - Rotacion CSS</title>
   <style>
-    body{
+    body {
       height: 100vh;
       color: white;
       font-family: Arial;
     }
-    .grid-container{
+
+    .grid-container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
     }
-    .container{
+
+    .container {
       display: flex;
       justify-content: center;
       align-items: center;
       border: 1px solid red;
     }
-    div[class^='cuadrado']{
+
+    div[class^='cuadrado'] {
       width: 200px;
       height: 200px;
       background: #7dc900;
       margin: 20px;
       transition: .3s;
     }
-    .container:hover .cuadrado1{
+
+    .container:hover .cuadrado1 {
       transform: rotate(45deg);
     }
-    .container:hover .cuadrado2{
+
+    .container:hover .cuadrado2 {
       transform: rotate(-45deg);
     }
-    .container:hover .cuadrado3{
+
+    .container:hover .cuadrado3 {
       transform: rotateX(45deg);
     }
-    .container:hover .cuadrado4{
+
+    .container:hover .cuadrado4 {
       transform: rotateY(45deg);
     }
-    .container:hover .cuadrado5{
+
+    .container:hover .cuadrado5 {
       transform: rotateZ(45deg);
     }
-    .container:hover .cuadrado6{
+
+    .container:hover .cuadrado6 {
       transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
     }
-    .container:hover .cuadrado7{
-      transform: rotate3d(x,y,x, rotate);
-      transform: rotate3d(1,0,0, 45deg);
+
+    .container:hover .cuadrado7 {
+      transform: rotate3d(x, y, x, rotate);
+      transform: rotate3d(1, 0, 0, 45deg);
     }
-    .container:hover .cuadrado8{
-      transform: rotate3d(0,1,0, 45deg);
+
+    .container:hover .cuadrado8 {
+      transform: rotate3d(0, 1, 0, 45deg);
     }
-    .container:hover .cuadrado9{
-      transform: rotate3d(0,0,1, 45deg);
+
+    .container:hover .cuadrado9 {
+      transform: rotate3d(0, 0, 1, 45deg);
     }
   </style>
 </head>
+
 <body>
   <h1 style="color: black; text-align: center;">Tranformacion - Rotate</h1>
   <div class="grid-container">
@@ -106,6 +120,7 @@
       </div>
     </div>
   </div>
-  
+
 </body>
+
 </html>
